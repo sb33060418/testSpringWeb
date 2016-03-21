@@ -22,7 +22,7 @@ public class JsonpController implements Controller{
 			HttpServletResponse arg1) throws Exception {
 		// TODO Auto-generated method stub
 		ModelAndView view = new ModelAndView(new MappingJackson2JsonView());
-		view.addObject("status", "n");
+		view.addObject("status", "y");
 		return view;
 	}
 
