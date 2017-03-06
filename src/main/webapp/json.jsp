@@ -10,7 +10,7 @@
 		<script>
 			$(window).load(function(){
 				$.ajax({
-			        url: 'http://localhost:8080/testSpringWeb/json',
+			        url: 'http://localhost:8080/testSpringWeb/json1',
 			        dataType: 'json'
 			    }).done(function (result) {
 			     alert(result+":"+result.status);  

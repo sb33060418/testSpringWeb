@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 import com.sunbin.test.testSpring.service.TestService;
 
@@ -19,7 +20,7 @@ import com.sunbin.test.testSpring.service.TestService;
 public class TestController implements Controller{
 	@Autowired
 	public TestService testService;
-	
+	JsonProcessingException a;
 	@RequestMapping(value="/index",method={RequestMethod.GET})
 	public ModelAndView handleRequest(HttpServletRequest arg0,
 			HttpServletResponse arg1) throws Exception {
