@@ -9,7 +9,6 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
-import com.sunbin.common.spring.SpringContextHolder;
 import com.sunbin.test.testSpring.service.TestService;
 
 public class BeanController implements Controller{

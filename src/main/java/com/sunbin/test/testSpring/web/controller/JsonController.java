@@ -3,30 +3,24 @@ package com.sunbin.test.testSpring.web.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.codehaus.jackson.map.util.JSONPObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
 import com.sunbin.test.testSpring.service.TestService;
+import org.springframework.stereotype.Controller;
 
-@org.springframework.stereotype.Controller
-public class JsonController implements Controller{
+@Controller
+public class JsonController{
 	@Autowired
 	public TestService testService;
-	
 
-	@Override
 	@RequestMapping(value="/json",method={RequestMethod.GET})
 	public ModelAndView handleRequest(HttpServletRequest arg0,
 			HttpServletResponse arg1) throws Exception {
