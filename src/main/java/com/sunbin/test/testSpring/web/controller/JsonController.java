@@ -28,7 +28,7 @@ public class JsonController {
 		// TODO Auto-generated method stub
 		ModelAndView view = new ModelAndView(new MappingJackson2JsonView());
 		// new MappingJackson2JsonView()
-		view.addObject("status", "y");
+		view.addObject("status", "yy");
 		view.addObject("info", "success");
 		return view;
 	}
