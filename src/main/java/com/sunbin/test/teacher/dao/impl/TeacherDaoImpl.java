@@ -3,11 +3,12 @@ package com.sunbin.test.teacher.dao.impl;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.sunbin.test.teacher.dao.TeacherDao;
 import com.sunbin.test.teacher.pojo.Teacher;
 
-@Repository
+@Repository("teacherDao")
 public class TeacherDaoImpl implements TeacherDao {
 
 	private static List<Teacher> teachers = new ArrayList<Teacher>();

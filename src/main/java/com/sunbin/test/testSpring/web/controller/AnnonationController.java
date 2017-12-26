@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class AnnonationController{
+public class AnnonationController {
 	@RequestMapping("/annonation")
 	public ModelAndView handleRequest(HttpServletRequest arg0,
 			HttpServletResponse arg1) throws Exception {

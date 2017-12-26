@@ -1,5 +1,8 @@
 package com.sunbin.test.teacher.pojo;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "Teacher")  
 public class Teacher {
 
 	private int id;

@@ -9,7 +9,7 @@ import com.sunbin.test.teacher.dao.TeacherDao;
 import com.sunbin.test.teacher.pojo.Teacher;
 import com.sunbin.test.teacher.service.TeacherService;
 
-@Service
+@Service("teacherService")
 public class TeacherServiceImpl implements TeacherService {
 
 	@Autowired

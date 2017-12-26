@@ -17,8 +17,8 @@
 	<mvc:default-servlet-handler />
 	
 	<!-- spring context holder -->
-	<bean class="com.sunbin.common.spring.SpringContextHolder"
-		lazy-init="false" />
+	<!-- <bean class="com.sunbin.common.spring.SpringContextHolder"
+		lazy-init="false" /> -->
 
     <import resource="services.xml"/>
     <import resource="daos.xml"/>

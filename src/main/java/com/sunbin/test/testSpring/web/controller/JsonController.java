@@ -17,30 +17,31 @@ import com.sunbin.test.testSpring.service.TestService;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class JsonController{
+@RequestMapping(value = "/json")
+public class JsonController {
 	@Autowired
 	public TestService testService;
 
-	@RequestMapping(value="/json",method={RequestMethod.GET})
+	@RequestMapping(value = "/y", method = { RequestMethod.GET })
 	public ModelAndView handleRequest(HttpServletRequest arg0,
 			HttpServletResponse arg1) throws Exception {
 		// TODO Auto-generated method stub
 		ModelAndView view = new ModelAndView(new MappingJackson2JsonView());
-		//new MappingJackson2JsonView()
+		// new MappingJackson2JsonView()
 		view.addObject("status", "y");
 		view.addObject("info", "success");
 		return view;
 	}
-	@RequestMapping(value="/json1",method={RequestMethod.GET})
-	@ResponseBody 
-	public Map testJson(HttpServletRequest request,
-			HttpServletResponse arg1) throws Exception {
+
+	@RequestMapping(value = "/n", method = { RequestMethod.GET })
+	@ResponseBody
+	public Map testJson(HttpServletRequest request, HttpServletResponse arg1)
+			throws Exception {
 		// TODO Auto-generated method stub
 		Map map = new HashMap();
 		map.put("status", "n");
 		map.put("info", "failure");
 		return map;
 	}
-
 
 }

@@ -1,7 +1,7 @@
 <%@ page language="java" pageEncoding="utf-8"%>
 <%@ page contentType="text/html ; charset=UTF-8"%>
 <html>
-<head>
+	<head>
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache">
 		<meta http-equiv="expires" content="0">  
@@ -10,17 +10,18 @@
 		<script>
 			$(window).load(function(){
 				$.ajax({
-			        url: 'http://localhost:8080/testSpringWeb/json1',
+			        url: 'http://localhost:8080/testSpringWeb/json/y',
 			        dataType: 'json'
 			    }).done(function (result) {
-			     alert(result+":"+result.status);  
-			        //TODO
+			    	//TODO
+			    	alert("done:"+result+":"+result.status);  
 			    }).fail(function (result, textStatus, info) {
-			    //TODO
+			    	//TODO
+			    	alert("fail:"+result+":"+textStatus+":"+info);  
 			    });
 			})
 		</script>
-</head>
-<body>
-</body>
+	</head>
+	<body>
+	</body>
 </html>

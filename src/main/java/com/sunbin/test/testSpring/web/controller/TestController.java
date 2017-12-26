@@ -17,7 +17,8 @@ public class TestController {
 	@Autowired
 	public TestService testService;
 
-	@RequestMapping(value = "/index", method = { RequestMethod.GET })
+	@RequestMapping(value = "/index", method = { RequestMethod.GET,
+			RequestMethod.POST })
 	public ModelAndView handleRequest(HttpServletRequest arg0,
 			HttpServletResponse arg1) throws Exception {
 		// TODO Auto-generated method stub

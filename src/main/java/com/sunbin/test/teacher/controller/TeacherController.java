@@ -3,8 +3,8 @@ package com.sunbin.test.teacher.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 import org.springframework.stereotype.Controller;
@@ -20,6 +20,13 @@ public class TeacherController {
 
 	@Autowired
 	private TeacherService teacherService;
+
+	@RequestMapping("")
+	public ModelAndView index(HttpServletRequest arg0,
+			HttpServletResponse arg1) throws Exception {
+		ModelAndView modelAndView = new ModelAndView("teacher/index");
+		return modelAndView;
+	}
 
 	@RequestMapping("/list")
 	public ModelAndView list(HttpServletRequest arg0,
@@ -37,12 +44,12 @@ public class TeacherController {
 		return modelAndView;
 	}
 
-	@RequestMapping("/save")
+	@RequestMapping(value="/save",method={RequestMethod.POST})
 	public ModelAndView save(Teacher teacher,HttpServletRequest arg0,
 			HttpServletResponse arg1) throws Exception {
 		ModelAndView modelAndView = new ModelAndView(new MappingJackson2JsonView());
 		teacherService.save(teacher);
-		modelAndView.addObject("list", teacherService.list());
+		modelAndView.addObject("status", "y");
 		return modelAndView;
 	}
 
@@ -51,16 +58,16 @@ public class TeacherController {
 			HttpServletResponse arg1) throws Exception {
 		ModelAndView modelAndView = new ModelAndView(new MappingJackson2JsonView());
 		teacherService.remove(teacher);
-		modelAndView.addObject("list", teacherService.list());
+		modelAndView.addObject("status", "y");
 		return modelAndView;
 	}
 
-	@RequestMapping("/update")
+	@RequestMapping(value="/update",method={RequestMethod.POST})
 	public ModelAndView update(Teacher teacher,HttpServletRequest arg0,
 			HttpServletResponse arg1) throws Exception {
 		ModelAndView modelAndView = new ModelAndView(new MappingJackson2JsonView());
 		teacherService.update(teacher);
-		modelAndView.addObject("list", teacherService.list());
+		modelAndView.addObject("status", "y");
 		return modelAndView;
 	}
 	
